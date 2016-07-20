@@ -35,7 +35,8 @@ The connectionFactory-ref points to a connection definition for active mq runnin
 Any suggestions on how to enable the non-blocking functionality would be appreciated.
 
 Mulesoft Support
-```Hi Phil,
+```
+Hi Phil,
 
 Also i was able to run your unit test by changing the brokerurl to tcp://localhost:61617.
 
@@ -48,4 +49,5 @@ BUILD SUCCESS
 
 
 Thanks
-Ram```
+Ram
+```
