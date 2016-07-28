@@ -51,3 +51,17 @@ BUILD SUCCESS
 Thanks
 Ram
 ```
+```
+Hello Phil,
+
+Is this just an issue in running a unit test?
+
+When using the JMS failover option, it is slightly different to when not using it. In that within the same connection attempt, the JMS driver will attempt to reconnect to the listed IP's in the failover url. This is a feature of ActiveMQ and the JMS Driver. However each failure is not a "connection failure" until you cannot get ANY connection to any of the listed IPs. Only in this situation is the reconnection strategy invoked.
+
+Why is blocking="false" essential for your test? As Ram indicated, the usage of this attribute is to allow an application to deploy successfully to Mule Server, when the JMS broker is known to be down or unavailable. It is also useful to allow your application to be deployed if other applications have some dependancy on it.
+
+However for running a unique unit test, it should not be a problem do either not use a failover url, or not use blocking - for that test.
+
+Cheers,
+```
+
