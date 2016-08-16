@@ -26,7 +26,7 @@ http://www.mulesoft.org/schema/mule/secure-property-placeholder http://www.mules
 
 		<spring:bean name="AmqConnectionFactory"
 			class="org.apache.activemq.spring.ActiveMQConnectionFactory"
-			p:brokerURL="failover:(tcp://localhost:61617)" p:redeliveryPolicy-ref="AmqRedeliveryPolicy" />
+			p:brokerURL="failover:(tcp://localhost:61617)?startupMaxReconnectAttempts=1" p:redeliveryPolicy-ref="AmqRedeliveryPolicy" />
 	</spring:beans>
 
 	<jms:activemq-connector name="Active_MQ"

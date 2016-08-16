@@ -65,3 +65,9 @@ However for running a unique unit test, it should not be a problem do either not
 Cheers,
 ```
 
+I have subsequently come across the options with the [activemq failover transport](http://activemq.apache.org/failover-transport-reference.html) and when I changed the failover string to be
+```
+failover:(tcp://localhost:61617)?startupMaxReconnectAttempts=1
+```
+I find that the unit test then passes (by completing rather than hanging).
+This appears to be a reasonable solution.
